@@ -1,0 +1,10 @@
+$button-radius: 10px;
+
+
+.btn {
+	display: block;
+	border-radius: $button-radius;
+	text-align: center;
+	font-family: $anton;
+	color: $brickRed;
+}

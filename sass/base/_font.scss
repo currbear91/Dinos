@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Anton|Amatic+SC|Dancing+Script|Fjalla+One');
+
+$abril: 'Abril FatFace', cursive;
+$anton: Anton, sans-serif;
+$fjalla: 'Fjalla One', sans-serif;
+$amatic: 'Amatic SC', cursive;
+$dance: 'Dancing Script', cursive;
+p, h1, h2, h3, h4, h5 {
+	font-family: $abril;
+	padding:0;
+}
+
+.logo {
+	margin: 0;
+	font-size: 4em;
+	font-family: $anton;
+	color: white;
+	font-weight: lighter;
+}
+.big{
+	font-size: 9em;
+	margin-top: 0;
+	font-family: $anton;
+	color: white;
+}
+
+.pizzaBoxHeader{
+	font-size: 3em;
+	margin-top: 25px;
+	font-family: $abril;
+	color: white;
+	text-decoration: underline;
+}

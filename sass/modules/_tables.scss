@@ -1,0 +1,32 @@
+table {
+	margin: 0 auto;
+	text-align: justify;
+	margin-top: 50px;
+	border-collapse: collapse;
+	width: 60%;
+	td{
+		text-align: right;
+		padding:10px;
+		font-family: $anton;
+		font-size: 1.2em;
+	}
+	tr:hover{
+		background-color: $gold;
+		color: white;
+	}
+	td:nth-child(1) {
+		text-align: left;
+	}
+}
+
+#businessHours {
+		color:white;
+		// border: 10px solid whitesmoke;
+		padding:10px;
+		border-radius: 10px;
+}
+
+
+// *{
+// 	border: 1px solid red;
+// }

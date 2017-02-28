@@ -1,0 +1,61 @@
+nav {
+	margin:0 auto;
+	width:100%;
+	background-color: black;
+	height: 60px;
+	border-bottom: 5px solid $greyBlue;
+	font-family: $anton;
+	z-index: 1000;
+	position: fixed;
+	ul{
+		list-style: none;
+		float:right;
+		margin-right: 100px;
+	}
+	li{
+		text-align: center;
+		width: 100px;
+		padding: 0 45px;
+		display: inline-block;
+		line-height: 60px;
+		font-size: 2vw;
+	}
+	a{
+		color: white;
+		text-decoration: none;
+		// width: 200px;
+	}
+	li:last-child{
+	}
+	p{
+		margin: 0 auto;
+		line-height: 100px;
+		text-align: center;
+		font-family: $fjalla;
+		font-size: 4em;
+		color: white;
+		letter-spacing: 3px;
+	}
+	.active {
+		background-color: $greyBlue;
+		color: white;
+	}
+	#navBrand {
+		@include container(550em);
+		background: linear-gradient(to right, rgba(255, 186, 73, 1),rgba(255, 186, 73, .95), rgba(255, 186, 73, .95), rgba(255, 186, 73, .95), rgba(255, 186, 73, 1), rgba(255, 186, 73, .95), rgba(255, 186, 73, .95),rgba(255, 186, 73, .95) ,rgba(255, 186, 73, 1));
+		width: 30%;
+		height: 100px;
+		text-align: center;
+		position: absolute;
+		border-radius: 50%;
+		border: 8px solid whitesmoke;
+		// clip-path: ellipse(50% 50% at 50% 50%);
+		top: 5px;
+		left: 20px;
+	}
+	@include susy-breakpoint(20em 30em) {
+		ul{
+			visibility: hidden;
+		}
+	}
+}

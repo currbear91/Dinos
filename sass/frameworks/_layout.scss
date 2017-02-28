@@ -1,0 +1,265 @@
+#welcome{
+	background: linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.1),rgba(0,0,0,.75)), url('../img/pizza.JPG') no-repeat bottom center;
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+	.container {
+		@include vertical-align();
+	}
+	.btnBox{
+		display: inline-block;
+		width: 49%;
+		text-align: center;
+		margin:0 auto;
+		padding-top: 50px;
+	}
+}
+
+@keyframes fadeIn {
+	0%{opacity: 0; margin-bottom: 100px;}
+	100%{opacity: 1;margin-bottom: 0px;}
+}
+@keyframes photoTransition{
+	0%{width:100%;}
+	100%{width: 50%;}
+}
+
+#dinos{
+	@include container();
+	text-align: center;
+	height: 20em;
+	padding-top: 10px;
+	border: 4px solid white;
+	animation: fadeIn 4s ease-out;
+	h3{
+		animation: fadeIn 5s ease-out;
+		color: white;
+		font-size: 2.5em;
+		margin: 0;
+	}
+	.big{
+		animation: fadeIn 6s ease-in;
+		margin-top: -50px;
+	}
+	.cursive{
+		animation: fadeIn 7s ease-in;
+		font-family: $dance;
+		letter-spacing: 1px;
+	}
+}
+
+#about{
+	width: 100%;
+	height: 100vh;
+	top:4em;
+	position: relative;
+	background-color: $brickRed;
+	overflow: hidden;
+	// @include angle(before, true, 2.5deg);
+}
+#info{
+	@include grid(2);
+	text-align: center;
+	// display: block;
+	// padding-top: 50px;
+	#businessHrs {
+		padding-top:100px;
+		h3{
+			font-size: 5em;
+			font-family: $anton;
+			color: white;
+		}
+	}
+}
+
+#location{ 
+	overflow: hidden;
+	.middle{
+		@include vertical-align();
+		color: white;
+		position: absolute;
+		// height: 30%;
+		h3{
+			font-family: $fjalla;
+			font-size: 3.5em;
+			color: $lightGrey;
+			border: 10px solid $greyBlue;
+			width: 60%;
+			margin: 0 auto;
+			padding:30px;
+		}
+	}
+	#map{
+		min-width: 50vw;
+		min-height: 50em;
+		z-index: 100;
+		opacity: .35;
+		transition: 2s ease-out;
+		&:hover{
+			background-color: transparent;
+			transition: 1s ease-in;
+			opacity: 1;
+		}
+	}
+}
+
+
+
+$mainLayout: layout(center 12 1/8 inside split isolate);
+$noGuts: layout(center 12 no-gutters);
+#menu {
+	@include angle(after, false, 2.5deg);
+	// @include layout($noGuts);
+	height: 100em;
+	.menuHeader{
+		padding-top:10em;
+		background-color: $brickRed;
+		padding-bottom:10em;
+		text-align: center;
+		letter-spacing: 5px;
+		font-size: 1.3vw;
+		border-bottom: 3px solid $lightGrey;
+	}
+	#menuContainer{
+		@include container();
+		@include layout($mainLayout);
+		margin:0 auto;
+		margin-top:5em;
+		height: 50em;
+	}
+	.pizzaBoxes{
+		@include span(3 of 12);
+		@include susy-breakpoint(20em 30em) {
+			@include span(12);
+			margin-top: 0;
+			height:200px;
+		}
+		margin-top: 20px;
+		color: white;
+		position: relative;
+		height: 25em;
+		text-align: center;
+		background-size: cover;
+		transition: background-color 10ms;
+		&::before{
+			 position: absolute;
+			  top: 0; right: 0; bottom: 0; left: 0;
+			  background-color: inherit;
+			  content: ' ';
+		}
+		&:hover, &:focus{
+			background-size: 150%;
+			transition: .5s ;
+			z-index: 100;
+			background-color: rgba(0,0,0,.4);
+			-webkit-transform: scale(1.3);
+  			transform: scale(1.3);
+			.middle{
+				visibility: visible;
+			}
+		}
+		&:last-child(4n + 4) {
+			@include last();
+		}
+		.middle{
+			@include vertical-align();
+			@include container();
+			height: 80%;
+			border:3px solid white;
+			visibility: hidden;
+		}
+		.pizzaList{
+			list-style: circle;
+			text-align: left;
+			margin-top: 20px;
+			font-family: $amatic;
+		}
+		.item{
+			font-size: 1.5em;
+			font-weight: bolder;
+		}
+	}
+}
+#pizza1, #pizza8{
+	background:url('../img/slice.jpg') no-repeat center;
+}
+#pizza2, #pizza5{
+	background: url('../img/slice2.jpg') no-repeat center;
+}
+#pizza3, #pizza6{
+	background: url('../img/slice3.jpg') no-repeat center;
+}
+#pizza4, #pizza7{
+	background: url('../img/slice4.jpg') no-repeat center;
+}
+
+#contact {
+	@include angle(before, false, 2.5deg);
+	height: auto;
+	z-index: 150;
+	background-color: $lightGrey;
+	.middle{
+		@include container(60%);
+		// @include push(4);
+		text-align: center;
+		margin-top: 25px;
+		padding-top: 50px;
+		// border:1px solid red;
+	}
+	form{
+		@include container(80%);
+	}
+	input {
+		width: 33%;
+		background-color: transparent;
+		border:none;
+		border-bottom: 4px solid black;
+		font-size: 1.5em;
+		color: $brickRed;
+		font-family: $anton;
+		display: block;
+		transition:.5s ease-in;
+		margin-top: 25px;
+		&:focus{
+			outline: none;
+			border:none;
+			font-size: 2em;
+			border-bottom: 4px solid $gold;
+			box-shadow-top: 0 0 1px $greyBlue;
+			transition: .5s ease-in;
+		}
+		&:focus::-webkit-input-placeholder{
+			color: $greyBlue;
+			font-family: $anton;
+		}
+	}
+	textarea{
+		background-color: rgba(88, 111, 124,.4);
+		margin-top: 50px;
+		&:focus{
+			outline: none;
+			border:none;
+			transition: .5s ease-in;
+		}
+	}
+	#contactInfo {
+		@include span(3 of 8 last);
+		background-color: whitesmoke;
+		height: 400px;
+	}
+	.btn {
+		@extend .btn;
+		width: 150px;
+		margin-top: 30px;
+		background-color: $gold;
+	}
+
+}
+#fun {
+	height: 100vh;
+	width: 500px;
+	background-color: rgb(125,125,150);
+}
+
+
+
